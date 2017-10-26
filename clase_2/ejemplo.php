@@ -35,3 +35,10 @@ switch ($numero_1) {
 		echo "La variable no es ni 0, 1, 2, 3 ni 4.";
 		break;
 }
+
+// VARIANTE DE IF
+
+	$i = 1;
+    $variable = ($i == 1)? true : false;
+    echo "</br>". $variable;
+
