@@ -1,6 +1,6 @@
 <?php
 
-$filas = 10;
+$filas = 12	;
 $columnas = 15;
 
 $tabla = "<table>";
@@ -59,3 +59,7 @@ while($i < $filas){
 $tabla2 .= "</table>";
 
 echo $tabla2;
+$a = 3;
+$filas = $columnas = --$a;
+
+echo $filas;
