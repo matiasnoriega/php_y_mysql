@@ -1,6 +1,7 @@
 <?php
 
 $meses = array('Enero',
+<<<<<<< HEAD
                "Febrero",
                "Marzo",
                "Abril",
@@ -12,6 +13,19 @@ $meses = array('Enero',
                "Octubre",
                "Noviembre",
                "Diciembre");
+=======
+           	"Febrero",
+           	"Marzo",
+           	"Abril",
+           	"Mayo",
+           	"Junio",
+           	"Julio",
+           	"Agosto",
+           	"Septiembre",
+           	"Octubre",
+           	"Noviembre",
+           	"Diciembre");
+>>>>>>> c0b1f6caf1b8c39b92929fe624427be82ea9c322
 
 
 for ($i=0; $i < count($meses); $i++) {
@@ -23,12 +37,18 @@ echo "<hr>";
 $i = 0;
 while($i < count($meses)){
 
+<<<<<<< HEAD
     echo $meses[$i] . "</br>";
     $i++;
+=======
+	echo $meses[$i] . "</br>";
+	$i++;
+>>>>>>> c0b1f6caf1b8c39b92929fe624427be82ea9c322
 }
 echo "<hr>";
 
 $nombres = array(
+<<<<<<< HEAD
                   "Barbara",
                   "Matias",
                   "Andres",
@@ -37,6 +57,16 @@ $nombres = array(
                   "Guido");
 for ($i=0; $i < count($nombres); $i++) {
     echo $nombres[$i] . "</br>";
+=======
+              	"Barbara",
+              	"Matias",
+              	"Andres",
+              	"Stephanie",
+              	"Hernan",
+              	"Guido");
+for ($i=0; $i < count($nombres); $i++) {
+	echo $nombres[$i] . "</br>";
+>>>>>>> c0b1f6caf1b8c39b92929fe624427be82ea9c322
 }
 echo "<hr>";
 
@@ -66,6 +96,7 @@ echo "</pre>";
 echo "<hr>";
 
 $persona = array(
+<<<<<<< HEAD
                   'altura' => 1.67 ,
                   'peso' => 73,
                   'nombre' => "Daniel",
@@ -75,11 +106,23 @@ $persona = array(
 foreach ($persona as $key => $value) {
 
     echo "$key = $value </br>";
+=======
+              	'altura' => 1.67 ,
+              	'peso' => 73,
+              	'nombre' => "Daniel",
+              	'apellido' => "Rinaldi",
+              	'edad' => 30);
+
+foreach ($persona as $key => $value) {
+
+	echo "$key = $value </br>";
+>>>>>>> c0b1f6caf1b8c39b92929fe624427be82ea9c322
 }
 
 echo "Altura: " . $persona["altura"] . "mts</br>";
 
 $persona = array(
+<<<<<<< HEAD
                 array(
                     'altura' => 1.67 ,
                     'peso' => 73,
@@ -99,6 +142,27 @@ $pedro = array(
     'nombre' => "Pedro",
     'apellido' => "Picapiedra",
     'edad' => 68);
+=======
+            	array(
+                	'altura' => 1.67 ,
+                	'peso' => 73,
+                	'nombre' => "Daniel",
+                	'apellido' => "Rinaldi",
+                	'edad' => 30),
+            	array(
+                	'altura' => 1.40 ,
+                	'peso' => 91,
+                	'nombre' => "Juan",
+                	'apellido' => "Perez",
+                	'edad' => 145)
+              	);
+$pedro = array(
+	'altura' => 1.84 ,
+	'peso' => 150,
+	'nombre' => "Pedro",
+	'apellido' => "Picapiedra",
+	'edad' => 68);
+>>>>>>> c0b1f6caf1b8c39b92929fe624427be82ea9c322
 
 array_push($persona, $pedro);
 
@@ -114,7 +178,11 @@ $tabla .= "<tbody>";
 
 for ($i=0; $i < count($persona); $i++) {
 
+<<<<<<< HEAD
     $tabla .= "<tr><td>" . $persona[$i]["nombre"] . "</td><td>" . $persona[$i]["apellido"] . "</td><td>" . $persona[$i]["peso"];
+=======
+	$tabla .= "<tr><td>" . $persona[$i]["nombre"] . "</td><td>" . $persona[$i]["apellido"] . "</td><td>" . $persona[$i]["peso"];
+>>>>>>> c0b1f6caf1b8c39b92929fe624427be82ea9c322
 }
 $tabla .= "</tbody></table>";
 
@@ -137,3 +205,7 @@ $implode = implode("-", $date);
 
 VAR_DUMP($implode);
 echo "</pre>";
+<<<<<<< HEAD
+=======
+
+>>>>>>> c0b1f6caf1b8c39b92929fe624427be82ea9c322
