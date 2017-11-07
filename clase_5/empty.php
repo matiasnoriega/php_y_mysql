@@ -11,10 +11,8 @@ if(isset($_GET['enviar'])) {
 	$nombre = $_GET['nombre'];
 	$apellido = $_GET['apellido'];
 
-	if(validarString("Nombre", $nombre, LARGO_NOMBRE, CORTO_NOMBRE) AND validarString("Apellido", $apellido, LARGO_NOMBRE, CORTO_NOMBRE)){
-		echo "Bienvenido $nombre $apellido";
-	}
-	
+	validarString("Nombre", $nombre, LARGO_NOMBRE, CORTO_NOMBRE);
+	validarString("Apellido", $apellido, LARGO_NOMBRE, CORTO_NOMBRE);
 }
 
 /* Al finalizar destruir todo lo recibido en la peticion porque no se va a necesitar mas y previene problemas de re-carga de datos. */
@@ -30,8 +28,12 @@ unset($_GET);
 </head>
 <body>
 	<form action="">
-		<input type="text" name="nombre" placeholder="Ingrea tu nombre!" required="true"></input>
-		<input type="text" name="apellido" placeholder="Ingrea tu apellido!" required="true"></input>
+		<label>Nombre: 
+		<input type="text" name="nombre" placeholder="Ingrea tu nombre!" required="true">
+		</label>
+		<label>Apellido: 
+		<input type="text" name="apellido" placeholder="Ingrea tu apellido!" required="true">
+		</label>
 		<input type="submit" name="enviar" value="Enviar">
 	</form>
 </body>

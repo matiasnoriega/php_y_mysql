@@ -13,7 +13,7 @@ function validarString($campo, $valor, $longitud_maxima = 10, $longitud_minima =
 
 	}else{
 
-		return true;
+		echo "El $campo es: " . ucfirst(strtolower($valor)) . ". </br>";
 	}
 
 }
