@@ -1,0 +1,6 @@
+[2017-11-08 20:10:03]	 on line (13) E:\www\php_y_mysql\clase_6\abrir_archivo.php Hola Mundo!
+[2017-11-08 20:10:03]	 on line (13) E:\www\php_y_mysql\clase_6\abrir_archivo.php Hola Mundo!
+[2017-11-08 20:10:03]	 on line (13) E:\www\php_y_mysql\clase_6\abrir_archivo.php Hola Mundo!
+[2017-11-08 20:10:03]	 on line (13) E:\www\php_y_mysql\clase_6\abrir_archivo.php Hola Mundo!
+[2017-11-08 20:10:04]	 on line (13) E:\www\php_y_mysql\clase_6\abrir_archivo.php Hola Mundo!
+[2017-11-08 20:10:04]	 on line (13) E:\www\php_y_mysql\clase_6\abrir_archivo.php Hola Mundo!
