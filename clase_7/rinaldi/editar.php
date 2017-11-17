@@ -19,11 +19,21 @@ if (isset($_POST['actualizar'])) {
 	    					texto= '".$_POST['texto']."' 
 	    					WHERE id_nota = ".$id);
 
-	    if ($nota->rowCount()) {
-	    	echo "Registro actualizado exitosamente";
-	    } else {
-	    	echo "Error al actualizar el registro.";
-	    }
+	    $notas->execute();	
+
+		$info = $notas->fetchAll(PDO::FETCH_ASSOC);
+
+		if($notas->rowCount()){
+
+			echo "Registro actualizado exitosamente!";
+
+		}else{
+
+			echo "Hubo un error!";
+
+		}
+
+		var_dump($info);
 
 	} catch (Exception $e) {
 

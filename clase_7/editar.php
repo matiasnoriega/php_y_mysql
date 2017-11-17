@@ -21,32 +21,18 @@ if(isset($_POST['actualizar'])){
 
 		$gbd = new PDO($dsn, $usuario, $password);
 
-		$notas = $gbd->prepare("UPDATE nota SET
-								titulo = ?,
-								foto = ?,
-								texto = ?,
-								WHERE id_nota = :id_nota");
+		$nota = $gbd->query("UPDATE nota SET 
+	    					titulo = '".$_POST['titulo']."', 
+	    					foto= '".$_POST['foto']."',
+	    					texto= '".$_POST['texto']."' 
+	    					WHERE id_nota = ".$id);
 
-		$notas->bindValue(':titulo', $titulo);
-		$notas->bindValue(':foto', $foto);
-		$notas->bindValue(':texto', $texto);
-		$notas->bindValue(':id_nota', $id);
 
-		$notas->execute();	
-
-		$info = $notas->fetchAll(PDO::FETCH_ASSOC);
-
-		if($notas->rowCount()){
-
-			echo "Registro actualizado exitosamente!";
-
-		}else{
-
-			echo "Hubo un error!";
-
-		}
-
-		var_dump($info);
+		if ($nota->rowCount()) {
+	    	echo "Registro actualizado exitosamente";
+	    } else {
+	    	echo "Error al actualizar el registro.";
+	    }
 
 
 	} catch(PDOException $e){
@@ -54,16 +40,38 @@ if(isset($_POST['actualizar'])){
 	}
 	unset($_POST);	
 }
+
 try{
 
 	$gbd = new PDO($dsn, $usuario, $password);
-	$notas = $gbd->prepare("SELECT id_nota, titulo, foto, texto, fecha_alta FROM nota WHERE id_nota = :id_nota");
+	$notas_1 = $gbd->query("SELECT * FROM nota WHERE id_nota = " . $id);
 
-	$notas->bindValue(":id_nota", $id);
+	$notas_1->bindValue(":id_nota", $id);
 
-	$notas->execute();	
+	$notas_1->execute();
 
-	$info = $notas->fetchAll(PDO::FETCH_ASSOC);
+	$info = $notas_1->fetchAll(PDO::FETCH_ASSOC);
+
+	$tabla = "<table><thead><tr><th>Id. Nota</th><th>Titulo</th><th>Foto</th><th>Texto</th><th>Fecha</th><th>Accion</th></tr><tbody>";
+
+	foreach ($info as $nota_1) {
+		
+		$tabla .= "<tr>";
+
+		$tabla .= "<td>" . $nota_1['id_nota'] . "</td><td>" .
+			 $nota_1['titulo'] . "</td><td>" .
+			 $nota_1['foto'] . "</td><td>" .
+			 $nota_1['texto'] . "</td><td>" .
+			 $nota_1['fecha_alta'] . "</td><td>" . 
+			 "<a href='editar.php?id=". $nota_1['id_nota'] . "'>Editar</a> <a href='borrar.php?id=". $nota_1['id_nota'] . "'>Borrar</a></td>";
+
+		$tabla .= "</tr>";
+
+	}
+
+	$tabla .= "</tbody></table>";
+
+	echo $tabla;
 
 
 } catch(PDOException $e){

@@ -1,12 +1,11 @@
 <?php
-
 include_once('config.php');
 
-$dsn = 'mysql:dbname=' . DB_NAME . ';host=' . DB_HOST;
+$dsn = 'mysql:dbname='.DB_NAME.';host='.DB_HOST;
 $usuario = DB_USER;
 $password = DB_PASSWORD;
 
-if(isset($_POST['actualizar'])){
+if(isset($_POST['crear'])){
 	
 	//Actualizo registro en DB
 
@@ -18,15 +17,14 @@ if(isset($_POST['actualizar'])){
 
 		$gbd = new PDO($dsn, $usuario, $password);
 
-		$nota = $gbd->query("UPDATE nota SET 
-	    					titulo = '".$_POST['titulo']."', 
-	    					foto= '".$_POST['foto']."',
-	    					texto= '".$_POST['texto']."' 
-	    					WHERE id_nota = ".$id);
+		$nota = $gbd->prepare("INSERT INTO nota (titulo, foto, texto, fecha_alta) VALUES('" .
+							$_POST['titulo'] . "', '" .
+							$_POST['foto'] . "', '" .
+	    					$_POST['texto'] . "', current_time())");
 
 
-		if ($nota->rowCount()) {
-	    	echo "Registro actualizado exitosamente";
+		if ($nota->execute()) {
+	    	echo "Registro ingresado exitosamente";
 	    } else {
 	    	echo "Error al actualizar el registro.";
 	    }
@@ -37,6 +35,7 @@ if(isset($_POST['actualizar'])){
 	}
 	unset($_POST);	
 }
+
 try{
 
 	$gbd = new PDO($dsn, $usuario, $password);
@@ -68,14 +67,30 @@ try{
 	echo 'Fallo la conexion: ' . $e->getMessage();
 
 }
-?>
 
+?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>PDO</title>
+	<title>Editar</title>
 </head>
 <body>
-<a href="crear.php">INGRESAR NOTA</a>
+	</br></br></br>
+	<form action="" method="POST">
+		<label>Titulo
+				<input type="text" name="titulo" value="" />
+		</label></br></br>
+		<label>Foto
+				<input type="text" name="foto" value="" />
+		</label></br></br>
+		<label>Texto
+				<input type="text" name="texto" value=""/>
+		</label></br></br>
+		<label>Fecha
+				<input type="text" name="fecha" value="" />
+		</label></br></br>
+		<input type="submit" name="crear">
+
+	</form>
 </body>
 </html>
