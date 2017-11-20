@@ -8,9 +8,8 @@
 
 	}
 
-
 ?>
-				<div class="main"> 
+<div class="main"> 
 	<div class="reservation_top">
 		<div class=" contact_right">
 			<h3>Contacto</h3>

@@ -13,22 +13,18 @@ if(!empty($_POST)){
 
 		if(mail($destinatario, $asunto, $cuerpo)){
 
-			echo "Consulta enviada";
+			header("Location: ./?page=contacto&rta=0x004");
 
 		}else{
 
-			echo "Consulta no enviada";
-			echo "</br></br>";
-			echo $asunto;
-			echo $destinatario;
-			echo $cuerpo;
+			header("Location: ./?page=contacto&rta=0x005");
 
 		}
 
 	}else{
 
-		echo "Nombre/Email/Mensaje invalido";
-
+		echo "Error loco.";
+		
 	}
 
 
@@ -44,7 +40,7 @@ function validarMensaje($mensaje){
 
 	if(strlen($mensaje_a_validar > 400)){
 
-		return false;
+		header("Location: ./?page=contacto&rta=0x003");
 
 	}else{
 
@@ -63,7 +59,7 @@ function validarEmail($email){
 
 	}else{
 
-		return false;
+		header("Location: ./?page=contacto&rta=0x002");
 
 	}
 
@@ -76,7 +72,7 @@ function validarNombre($nombre){
 
 	if(empty($nombre_a_validar) || (strlen($nombre_a_validar) < 3) || is_numeric($nombre_a_validar) || is_numeric($nombre_a_validar[0])){
 
-		return false;
+		header("Location: ./?page=contacto&rta=0x001");
 
 	}else{
 
