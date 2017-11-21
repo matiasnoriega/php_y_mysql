@@ -7,7 +7,7 @@
 		mostrarMensaje($rta);
 
 	}
-
+	
 ?>
 <div class="main"> 
 	<div class="reservation_top">
