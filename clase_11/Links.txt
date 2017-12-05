@@ -1,0 +1,14 @@
+Links
+https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
+
+Apache Doc
+https://httpd.apache.org/docs/2.4/es/
+
+
+http://htaccesscheatsheet.com/
+
+Expresiones Regulares
+https://www.regular-expressions.info/tutorial.html
+
+
+https://i.pinimg.com/originals/a6/b4/64/a6b46410088bd14c2aeec91e1fa0b727.png

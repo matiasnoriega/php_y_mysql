@@ -1,0 +1,12 @@
+
+RewriteEngine On
+RewriteOptions Inherit
+
+
+
+DirectoryIndex pdo.php
+
+RewriteRule ^agregar$					crear.php			[END]
+RewriteRule ^editar/([0-9]+)$			editar.php?id=$1	[END]
+
+SetOutputFilter DEFLATE

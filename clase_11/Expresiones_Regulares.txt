@@ -1,0 +1,6 @@
+[0-9]: solamente números.
+[0-9]{4}: números de 4 cifras.
+([0-9]{1,2}: números de 1 y 2 cifras.
+(.*): cualquier expresión.
+[a-z]: solamente letras.
+[a-z]{1,10}: palabras entre 1 y 10 caracteres.

@@ -53,7 +53,7 @@ try{
 			 $nota['foto'] . "</td><td>" .
 			 $nota['texto'] . "</td><td>" .
 			 $nota['fecha_alta'] . "</td><td>" . 
-			 "<a href='editar.php?id=". $nota['id_nota'] . "'>Editar</a> <a href='borrar.php?id=". $nota['id_nota'] . "'>Borrar</a></td>";
+			 "<a href='editar/". $nota['id_nota'] . "'>Editar</a> <a href='borrar.php?id=". $nota['id_nota'] . "'>Borrar</a></td>";
 
 		$tabla .= "</tr>";
 
@@ -76,6 +76,6 @@ try{
 	<title>PDO</title>
 </head>
 <body>
-<a href="crear.php">INGRESAR NOTA</a>
+<a href="agregar">INGRESAR NOTA</a>
 </body>
 </html>
